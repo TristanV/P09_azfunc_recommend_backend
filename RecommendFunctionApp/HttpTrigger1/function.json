@@ -21,7 +21,7 @@
       "direction": "in",
       "name": "popularityTable",
       "path": "data/popularity_table.pkl",
-      "connection": "p09usagepayment9c1c",
+      "connection": "AzureWebJobsStorage",
       "dataType": "binary"
     },
     {
@@ -29,7 +29,7 @@
       "direction": "in",
       "name": "recommendationsTable",
       "path": "data/recommendations_table.pkl",
-      "connection": "p09usagepayment9c1c",
+      "connection": "AzureWebJobsStorage",
       "dataType": "binary"
     }
   ]
