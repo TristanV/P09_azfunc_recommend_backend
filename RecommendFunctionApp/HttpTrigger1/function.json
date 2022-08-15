@@ -1,0 +1,36 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "blob",
+      "direction": "in",
+      "name": "popularityTable",
+      "path": "data/popularity_table.pkl",
+      "connection": "p09usagepayment9c1c",
+      "dataType": "binary"
+    },
+    {
+      "type": "blob",
+      "direction": "in",
+      "name": "recommendationsTable",
+      "path": "data/recommendations_table.pkl",
+      "connection": "p09usagepayment9c1c",
+      "dataType": "binary"
+    }
+  ]
+}
