@@ -15,11 +15,11 @@ def main(
 
     # Load the data from AzureBlobStorage 
     popularity_rec = pickle.load(BytesIO(popularityTable.read()))
-    print('popularity_rec: ', popularity_rec.shape)
+    print('popularity_rec: ', len(popularity_rec))
     
     
     recommendations_rec = pickle.load(BytesIO(recommendationsTable.read()))
-    print('recommendations_rec: ', recommendations_rec.shape)
+    print('recommendations_rec: ', len(recommendations_rec))
 
     # Get the sample_user_id param (see the Frontend app for the request structure)
     sample_user_id = req.params.get('data')
