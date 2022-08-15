@@ -44,8 +44,10 @@ def main(
         if sample_user_id in recommendations_rec.keys():
             top5message = "CF recommendations ignoring user already visited articles"
             top5rec = recommendations_rec[sample_user_id]
-
-        response_data = json.dumps({"result": list(top5rec) , "message": top5message})
+        
+        # to avoid np.ndarray conversion error, and int64 conversion error during json.dumps, let's translate the recommendations into a simple python list
+        top5rec = [int(article_id) for article_id in top5rec]
+        response_data = json.dumps({"result": top5rec , "message": top5message})
  
         # Return the recommendation
         return func.HttpResponse(response_data, status_code=200)
