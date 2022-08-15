@@ -45,10 +45,10 @@ def main(
             top5message = "CF recommendations ignoring user already visited articles"
             top5rec = recommendations_rec[sample_user_id]
 
-        response_data = json.dumps({"result": top5rec , "message": top5message})
+        response_data = json.dumps({"result": list(top5rec) , "message": top5message})
  
         # Return the recommendation
-        return func.HttpResponse(response_data)
+        return func.HttpResponse(response_data, status_code=200)
 
     else:
         response_data = json.dumps({"error": "the function should be called with a data parameter containing an integer user ID"})
