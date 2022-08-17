@@ -42,7 +42,7 @@ def main(
         top5message = "most popular articles"
         
         if sample_user_id in recommendations_rec.keys():
-            top5message = "CF recommendations ignoring user already visited articles"
+            top5message = "CF recommendations ignoring user already visited articles."
             top5rec = recommendations_rec[sample_user_id]
         
         # to avoid np.ndarray conversion error, and int64 conversion error during json.dumps, let's translate the recommendations into a simple python list
